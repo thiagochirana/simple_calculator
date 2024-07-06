@@ -2,6 +2,10 @@ use colour::*;
 use std::io;
 
 fn main() {
+  menu();
+}
+
+fn menu(){
   loop {
     cyan_ln_bold!("=================");
     cyan_ln_bold!("   calculadora");
@@ -39,7 +43,10 @@ fn main() {
       2=>minus(fst_num, scd_num),
       3=>multiplication(fst_num, scd_num),
       4=>division(fst_num, scd_num),
-      5=>break,
+      5=>{
+        green_ln_bold!("\nBye");
+        break;
+      },
       _=>red_ln_bold!("Invalid option"),
     }
   }
